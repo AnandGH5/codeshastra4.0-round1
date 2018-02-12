@@ -1,0 +1,100 @@
+{% extends "navbar.html" %} {% load static %} {% block content %}
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+
+<link rel="stylesheet" href="{% static 'css/stylemainhome.css' %}">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+
+    
+
+
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+</head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+   
+
+
+
+
+
+
+
+<div id="main">
+	
+    <div id="heading">Welcome</div>
+		<div id="subheading">{{hospitals.0.name}}</div>
+    
+         <hr id="headline">
+        <br>
+
+   <br><br>
+
+
+
+
+
+
+
+
+    <div class="row">              
+         {% for i in doc %}     
+    <div class="col s12  col m6 col l4  gallery_image ">
+      <div class="card">
+        <div class="card-image">
+   
+           
+        
+   
+          <span class="card-title" style="font-size: 2em; text-shadow: 1px 1px #000;">{{i.name}} <br > <span style="font-size: 0.7em"> </span></span> 
+          <a href="/app/hospital/fac/{{i.name}}/" class="btn-floating halfway-fab waves-effect waves-light red"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="card-content">
+          <p id="details" style="font-family: 'Manuale', serif; "> {{i.description|slice:"0:150"}}...</p>
+        </div>
+         <div class="card-action "> 
+         <br>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
+
+      </div>
+   
+
+
+
+       
+
+  
+   
+
+
+
+
+
+
+
+          
+
+    </body>
+{% endblock content %}

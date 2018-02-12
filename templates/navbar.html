@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+
+<head>
+    <title>MediCare</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name=description content="codeshastra 4 round 1" />
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link rel="prefetch stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800,600">
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'css/footer-distributed-with-address-and-phones.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .dropdown-content {
+
+            min-width: 123px !important;
+            max-height: auto;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul id="dropdown1" class="dropdown-content">      
+    <li>
+            <a href="{% url 'emergency' %}">Hospital Finder</a>
+            
+        </li><li class="divider"></li>
+        <li>
+            <a href="{% url 'hospital' %}">Hospital Centre</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+            <a href="{% url 'xraybot' %}">X-Ray Analyzebot</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+            <a href="{% url 'chatbot' %}">Dr Medicbot</a>
+        </li>
+    </ul>
+
+<ul id="dropdown2" class="dropdown-content">   
+<li>
+            <span style="color:#000;">{{profile.user.username}}</span>
+        </li>
+        <li class="divider"></li>   
+    <li>
+            <a href="{% url 'logout' %}">Logout</a>
+            
+        </li><li class="divider"></li>
+       
+       
+    </ul>
+
+
+
+
+
+
+    
+
+
+
+
+
+    <nav class="nav-extended">
+        <div class="nav-wrapper blue-grey darken-3">
+            <div class="container">
+
+                <a href="{% url 'home' %}" class="brand-logo"><i class="large material-icons">landscape</i><span id="logo1">Medi</span><span id="logo2">Care</span></a>
+               
+                <ul class="right hide-on-med-and-down">
+               
+                   
+                   <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                    <li><a href="{% url 'faq' %}">FAQ</a></li>                                                                     
+                        <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-beloworigin="true"><img style = " height : 30px; margin-bottom: -10px;" src=""><i class="material-icons right">arrow_drop_down</i>Features</a></li>
+                       {% if profile  %}
+                          <li id="profilepic"><a class="dropdown-button" href="#!" data-activates="dropdown2" data-beloworigin="true"><img style = " height : 30px; margin-bottom: -10px;" src="{{ profile.profile_pic.url }}"><i class="material-icons right">arrow_drop_down</i></a></li>       
+                    {% endif %}
+                       
+                   
+                </ul>
+
+               <ul id="slide-out" class="side-nav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="https://2.bp.blogspot.com/-2RewSLZUzRg/U-9o6SD4M6I/AAAAAAAADIE/voax99AbRx0/s1600/14%2B-%2B1%2B%281%29.jpg">
+      </div>
+    
+      
+
+       
+       <a href="#"><span class="white-text email">Hi!</span></a>
+    </div></li> 
+ <li><a class="waves-effect" href="{% url 'home' %}">Home</a></li>
+     <li><a href="{% url 'aboutus' %}">About Us</a></li>
+     <li><a href="{% url 'faq' %}">FAQ</a></li>
+
+
+    
+
+
+
+     <li>
+            <a class="waves-effect"  href="{% url 'emergency' %}">Hospital Finder</a>
+        </li>
+    <li><a class="waves-effect" href="{% url 'hospital' %}">Hospital Centre</a></li> 
+    <li><a class="waves-effect" href="{% url 'xraybot' %}">X-Ray Analyzebot</a></li>  
+        <li><a class="waves-effect" href="{% url 'chatbot' %}">Dr Medicbot</a></li>
+   
+      
+  </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>      </div>
+
+              
+        </div>
+
+    </nav>
+
+    {% block content %} {% endblock content %}
+
+    <!-- close container -->
+
+    <!-- JavaScripts -->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+    <style type="text/css">
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <h3>Medi
+                <span>Care</span>
+            </h3>
+
+            <p class="footer-links">
+                <a href="{% url 'home' %}">Home</a> ·
+                <a href="{% url 'aboutus' %}">About</a> ·
+                <a href="{% url 'faq' %}">FAQ</a> 
+
+                <!-- <a href="/about/">Contact</a> -->
+
+                <!--<a href="#">Contact</a>-->
+
+            </p>
+
+            <p class="footer-company-name">Origin Incorporated &copy; 2017</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>S.V. Road</span> Mumbai, India</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+1 555 123456</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p>
+                    <a href="mailto:support@company.com">support@theorigin.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>About the company</span> Origin Incorporated helps to make beautiful products to help people with creative
+                ideas succeed.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="#">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#">
+                    <i class="fa fa-github"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('select').material_select();
+        $(".button-collapse").sideNav();
+    });
+</script>
+
+</html>

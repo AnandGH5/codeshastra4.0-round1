@@ -1,0 +1,134 @@
+{% extends "navbar.html" %} {% load static %} {% block content %}
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+
+<link rel="stylesheet" href="{% static 'css/stylemainhome.css' %}">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+
+    
+
+
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+</head>
+
+    <body>
+      <!--Import jQuery before materialize.js-->
+   
+
+
+
+
+
+
+
+<div id="main">
+	
+    
+		<div id="subheading">Send SOS distress call to your friends!</div>
+         <hr id="headline">
+
+        <br>
+
+
+
+       
+
+          <form method="POST" action="/app/emcall">
+        {% csrf_token %}
+       
+       
+        <div class="button-container">
+
+
+
+          <button class="btn btn-large waves-effect waves-light red" type="submit" name="action">Send SOS
+    <i class="material-icons right">send</i>
+  </button>
+        </div>
+
+         <div class="input-container">
+          <input type="text" id="#{label}" value="" class="lat" name="lat" />
+          <label for="#{label}">Your latitude : </label>
+          <div class="bar"></div>
+        </div>
+
+
+         <div class="input-container">
+          <input type="text" id="#{label}" value="" class="long" name="long" />
+          <label for="#{label}">Your Longitude :</label>
+          <div class="bar"></div>
+        </div>
+
+        <br>
+           </form>
+
+
+  
+
+     
+
+
+
+       
+
+  
+   
+
+</div>
+
+
+
+
+
+          
+
+    </body>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+ var l1,l2;
+       if (navigator.geolocation) {
+                try {
+                  navigator.geolocation.getCurrentPosition(function(position) {
+                     myLocation = {
+                      lat: position.coords.latitude,
+                      lng: position.coords.longitude
+                    };
+                  $(".lat").attr("value",myLocation.lat);
+                  $(".long").attr("value",myLocation.lng);
+                  });
+
+
+                } catch (err) {
+                   myLocation = {
+                    lat: 23.8701334,
+                    lng: 90.2713944
+                  };
+
+                //  document.getElementsById("lat").setAttribute("value", myLocation.lat);
+
+                  
+ $( ".long" ).attr("value", myLocation.lng);
+                 console.log(myLocation.lat);
+              } 
+                }
+                
+</script>
+
+{% endblock content %}

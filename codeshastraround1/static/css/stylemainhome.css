@@ -1,0 +1,108 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+   
+ 
+  }
+
+.card {
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 30px; /* Added */
+}
+
+
+  #logo1{
+  color:  #ffffff;
+  font: normal 35px 'Cookie', cursive;
+}
+
+#logo2{
+  color:  #5383d3;
+  font:normal 35px 'Cookie', cursive;
+}
+
+#details{
+  font: normal 1em 'Cookie';
+}
+
+
+
+  #main {
+    margin-top: 5% !important;
+    flex: 1 0 auto; 
+    margin: auto;
+    text-align:center; 
+
+  }
+
+
+  #heading{
+    font: normal 35px 'Cookie', cursive;
+  }
+
+
+   #subheading{
+    margin-top: 10px; 
+          font-size: 1.6em;
+          font-weight: bold;
+   }
+
+ #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+   
+}
+
+.card-title{
+  font-size: 1.1em !important;
+  text-shadow: 1px 1px black;
+
+}
+
+
+
+
+
+
+
+
+#workbody{
+
+  text-align: left;
+  color: #9e9e9e;
+}
+
+   #headline{
+    width: 5%;
+     border: none;
+    height: 2px;
+    margin: auto;
+    /* Set the hr color */
+    color: #ef5350; /* old IE */
+    background-color: #ef5350; /* Modern Browsers */
+   }
+
+   #headpara{
+    margin: auto;
+    margin-top: 20px;
+    width:80%;
+    color: #9e9e9e;
+   }
+#current{
+border-bottom: 3px solid #ff8f00 ;
+ 
+}
+
+.brand-logo{
+		font-size: 1.7em !important;
+
+}
+
+.footer-distributed{
+  margin: 0 !important;
+}
